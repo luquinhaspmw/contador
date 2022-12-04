@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@-webkit-keyframes modalAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, -5px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes modalAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, -5px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+:root {
+  --color1:#8C030E;
+  --color2:#D9D3B8;
+  --color3:#8C754A;
+  --color4:#590202;
+  --color5:#260101;
+  --font: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body, html {
+  background: radial-gradient(ellipse at top, var(--color1), var(--color5)), radial-gradient(ellipse at bottom, var(--color5), var(--color1));
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.container-full {
+  display: none;
+}
+
+.container-full.on {
+  z-index: 1;
+  -webkit-animation: modalAnimation 0.5s;
+          animation: modalAnimation 0.5s;
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-full.on i {
+  cursor: pointer;
+  font-size: 3rem;
+  color: var(--color2);
+}
+.container-full.on p {
+  color: var(--color2);
+  font-size: 2rem;
+}
+.container-full.on .group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+.container-full.on .group #atividade-nome {
+  width: 80%;
+  height: 40px;
+  border-radius: 10px 0px 0px 10px;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  color: var(--color1);
+}
+.container-full.on .group .confirme {
+  transition: 0.6s;
+  cursor: pointer;
+  height: 40px;
+  width: 20%;
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+  text-transform: uppercase;
+  background-color: var(--color2);
+  color: var(--color1);
+  font-weight: 700;
+}
+.container-full.on .group .confirme:hover {
+  background-color: var(--color5);
+  color: var(--color2);
+}
+
+.container {
+  padding: 10px;
+}
+.container .container-child.container-table {
+  height: 470px;
+  overflow: auto;
+}
+.container .container-child {
+  padding: 10px;
+  text-align: center;
+}
+.container .container-child .counter {
+  width: 60%;
+  margin: auto;
+}
+.container .container-child .counter .clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color2);
+}
+.container .container-child .counter .clock span {
+  font-size: 5rem;
+  margin-top: -10px;
+}
+.container .container-child .counter .clock .time {
+  font-size: 4.5rem;
+}
+.container .container-child .counter .buttons {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .container-child .counter .buttons .button {
+  cursor: pointer;
+  width: 30%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.container .container-child .counter .buttons .button:hover {
+  background-color: var(--color3);
+  color: white;
+}
+.container .container-child .history {
+  width: 100%;
+  background-color: var(--color2);
+  border-collapse: collapse;
+}
+.container .container-child .history #tbody tr:nth-child(even) {
+  background-color: var(--color2);
+}
+.container .container-child .history #tbody tr:nth-child(odd) {
+  background-color: var(--color3);
+}
+.container .container-child .history tr th {
+  text-align: center;
+  padding: 10px;
+  width: 33.3333333333%;
+}
+.container .container-child .history tr td {
+  padding: 10px;
+  color: black;
+  border-bottom: 1px solid black;
+}
+.container .container-child .history tr .right-align {
+  text-align: right;
+}
+.container .container-child .history tr .left-align {
+  text-align: left;
+}
+.container .container-child .history .title {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -3%;
+  background-color: var(--color5);
+  color: var(--color2);
+}
+
+@media screen and (max-width: 600px) {
+  .container-full .group #atividade-nome {
+    width: 60%;
+  }
+  .container-full .group .confirme {
+    width: 20%;
+  }
+  .container {
+    padding: 0px;
+  }
+  .container .container-child.container-table {
+    height: 450px;
+  }
+  .container .container-child .counter {
+    width: 100%;
+  }
+  .container .container-child .history {
+    width: 100%;
+    background-color: var(--color2);
+    border-collapse: collapse;
+  }
+  .container .container-child .history tr th.left-align {
+    padding: 10px;
+  }
+  .container .container-child .history tr td {
+    font-size: 0.8rem;
+  }
+  .container .container-child .history tr .right-align {
+    width: 20%;
+  }
+  .container .container-child .history tr .left-align {
+    width: 60%;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>Contador</title>
+</head>
+<body>
+    <div class="container-full" id="modal">
+        <i class="fa-solid fa-circle-xmark" id="closeModal"></i>
+        <p>Salve sua atividade</p>
+        <div class="group" id="saveAtividade">
+            <input type="text" id="atividade-nome">
+            <button class="confirme" id="saveButton">Salvar</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-child">
+            <div class="counter">
+                <div class="clock">
+                    <p class="time" id="hour">00</p>
+                    <span>:</span>
+                    <p class="time" id="minute">00</p>
+                    <span>:</span>
+                    <p class="time" id="seconds">00</p>
+                </div>
+                <div class="buttons">
+                    <button class="button" id="play">Play</button>
+                    <button class="button" id="pause">Pause</button>
+                    <button class="button" id="stop">Stop</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-child container-table">
+            <table class="history">
+                <thead>
+                    <tr class="title">
+                        <th class="left-align">Atividade</th>
+                        <th class="right-align">Tempo</th>
+                        <th class="right-align">Data</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
